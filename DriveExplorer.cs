@@ -1,12 +1,17 @@
 ﻿using System;
 using System.IO;
 
-namespace CSharpGround.Drives
+namespace CSharpGround.FileSystem
 {
-    public class DriveExplorer
+    public class DriveExplorer : Feature
     {
-        public void Show()
+        public override int Id => 1;
+        public override string Name => "Drive Explorer";
+
+        public override void Show()
         {
+            base.Show();
+
             Console.WriteLine("Enter directory path:");
 
             string dirname = Console.ReadLine();
@@ -31,19 +36,6 @@ namespace CSharpGround.Drives
         {
             for (int i = 0; i < spacesCount; i++)
                 Console.Write(" ");
-        }
-        private long ConvertToGB(long size) => size / 1000 / 1000 / 1000;
-        private void GetDriveInfo(DriveInfo drive)
-        {
-            Console.WriteLine("Название диска: " + drive.Name);
-            Console.WriteLine("Тип: " + drive.DriveType);
-
-            if (drive.IsReady)
-            {
-                Console.WriteLine("Объём диска: " + ConvertToGB(drive.TotalSize) + "GB");
-                Console.WriteLine("Доступно места: " + ConvertToGB(drive.AvailableFreeSpace) + "GB");
-                Console.WriteLine("Метка тома: " + drive.VolumeLabel);
-            }
         }
         private void ShowFilesInFolder(DirectoryInfo directory, int spacesCount)
         {
@@ -87,5 +79,22 @@ namespace CSharpGround.Drives
                 Console.WriteLine("You haven't permission to the folder " + error.Source);
             }
         }
+
+        #region Unused
+        DriveInfo[] unused_drives = DriveInfo.GetDrives();
+        private long unused_ConvertToGB(long size) => size / 1000 / 1000 / 1000;
+        private void unused_GetDriveInfo(DriveInfo drive)
+        {
+            Console.WriteLine("Название диска: " + drive.Name);
+            Console.WriteLine("Тип: " + drive.DriveType);
+
+            if (drive.IsReady)
+            {
+                Console.WriteLine("Объём диска: " + unused_ConvertToGB(drive.TotalSize) + "GB");
+                Console.WriteLine("Доступно места: " + unused_ConvertToGB(drive.AvailableFreeSpace) + "GB");
+                Console.WriteLine("Метка тома: " + drive.VolumeLabel);
+            }
+        }
+        #endregion
     }
 }
