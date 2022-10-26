@@ -7,7 +7,7 @@ var features = program.GetFeatures();
 features.Show();
 ```
 
-> console
+> Console [MiZZeR Co. © 2022. All rights reserved.]
 > ```
 > Drive Explorer
 > ```
