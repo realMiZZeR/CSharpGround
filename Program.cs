@@ -1,7 +1,7 @@
 ﻿using System;
-using LearnCSharp.Drives;
+using CSharpGround.Drives;
 
-namespace LearnCSharp
+namespace CSharpGround
 {
     internal class Program
     {

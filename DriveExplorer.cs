@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace LearnCSharp.Drives
+namespace CSharpGround.Drives
 {
     public class DriveExplorer
     {
