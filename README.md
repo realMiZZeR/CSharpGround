@@ -7,7 +7,7 @@ var features = program.GetFeatures();
 features.Show();
 ```
 
-[CONSOLE]
+x [console] x
 ```
 > Drive Explorer
 ```
