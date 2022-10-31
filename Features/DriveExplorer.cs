@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CSharpGround.FileSystem
+namespace CSharpGround.Features
 {
     public class DriveExplorer : Feature
     {
@@ -10,8 +10,6 @@ namespace CSharpGround.FileSystem
 
         public override void Show()
         {
-            base.Show();
-
             Console.WriteLine("Enter directory path:");
 
             string dirname = Console.ReadLine();

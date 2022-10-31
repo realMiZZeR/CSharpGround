@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DriveExplorer.cs" />
+    <Compile Include="Features\DriveExplorer.cs" />
     <Compile Include="Feature.cs" />
+    <Compile Include="Features\HTMLParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

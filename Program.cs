@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading;
-using CSharpGround.FileSystem;
+using CSharpGround.Features;
 
 namespace CSharpGround
 {
@@ -45,7 +44,9 @@ namespace CSharpGround
 
             return new List<Feature>()
             {
-                new DriveExplorer()
+                new DriveExplorer(),
+                new HTMLParser(),
+
             };
         }
 
@@ -55,18 +56,23 @@ namespace CSharpGround
 
             foreach(var feature in features)
             {
-                if(feature.Id != choice)
+                if(feature.Id == choice)
                 {
-                    Console.WriteLine("The feature not found, restarting...");
-
-                    Thread.Sleep(1000);
                     Console.Clear();
-                    Start();
+                    feature.Show();
+                    return;
                 }
-
-                Console.Clear();
-                feature.Show();         
             }
+
+            Console.WriteLine("The feature not found, restarting...");
+            Restart();
+        }
+
+        private void Restart()
+        {
+            Thread.Sleep(1000);
+            Console.Clear();
+            Start();
         }
     }
 }
