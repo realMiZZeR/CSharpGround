@@ -46,11 +46,22 @@
     <Compile Include="Features\DriveExplorer.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="Features\HTMLParser.cs" />
+    <Compile Include="Features\Tasks.cs" />
+    <Compile Include="Patterns\Adapter\Adapter.cs" />
+    <Compile Include="Patterns\Adapter\ISender.cs" />
+    <Compile Include="Patterns\Adapter\Requester.cs" />
+    <Compile Include="Patterns\Strategy\FactoryWorker.cs" />
+    <Compile Include="Patterns\Strategy\IWork.cs" />
+    <Compile Include="Patterns\Strategy\Programmer.cs" />
+    <Compile Include="Patterns\Strategy\Worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patterns\Fabric\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
